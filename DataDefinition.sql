@@ -2,8 +2,8 @@ CREATE DATABASE COUNTRY;
 USE COUNTRY;
 
 CREATE TABLE CITIZEN(
-	NATIONAL_ID INT NOT NULL,
-    NAME VARCHAR(50) NOT NULL,
+    NATIONAL_ID INT NOT NULL,
+    NAME VARCHAR(50) NOT NULL,	
     AGE INT ,
     BIRTH_DATE DATE
 );
@@ -38,19 +38,19 @@ MODIFY COLUMN NAME VARCHAR(30)
 FIRST;
 
 CREATE TABLE DEPARTMENT(
-	DEPT_NAME varchar(20),
+    DEPT_NAME varchar(20),
     TITLE varchar(30),
     EST_YEAR char(4),
     primary key(DEPT_NAME)
 );
 
 CREATE TABLE COURSE(
-	COURSE_ID varchar(8),
+    COURSE_ID varchar(8),
     TITLE varchar(30),
     PROGRAM varchar(5),
-	DEPT_NAME varchar(20),
-	primary key(COURSE_ID,PROGRAM),
-	foreign key(DEPT_NAME) references DEPARTMENT(DEPT_NAME)
+    DEPT_NAME varchar(20),	
+    primary key(COURSE_ID,PROGRAM),
+    foreign key(DEPT_NAME) references DEPARTMENT(DEPT_NAME)
 );
 
 CREATE TABLE NEW_COURSE AS select * FROM COURSE;
